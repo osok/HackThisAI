@@ -1,6 +1,10 @@
+plotly
+requests
+matplotlib
 gunicorn
 flask
 dill
+graphviz
 numpy
 markdown
 pandas
