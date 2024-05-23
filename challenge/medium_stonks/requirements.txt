@@ -4,7 +4,7 @@ dill
 numpy
 markdown
 pandas
-sklearn-learn
+scikit-learn
 joblib
 argparse
 datetime
