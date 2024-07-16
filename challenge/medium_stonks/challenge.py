@@ -13,11 +13,11 @@ from flask_limiter.util import get_remote_address
 app = Flask(__name__)
 import index
 
-limiter = Limiter(app, key_func=get_remote_address, default_limits=["1/second"])
+limiter = Limiter(app=app, key_func=get_remote_address, default_limits=["1/second"])
 
 
 @app.route("/predict", methods=["POST"])
-@limiter.limit("1/second")
+@limiter.limit("1/10millisecond")
 def predict():
     try:
         data = request.json
@@ -61,4 +61,4 @@ def check():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0",port=5050)
